@@ -14,3 +14,23 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::resource('users', 'UserController')->middleware('auth');
+
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Route::resource('blogCategories', 'BlogCategoryController');
+
+Route::resource('blogTags', 'BlogTagController');
+
+Route::resource('blogComments', 'BlogCommentController');
+
+Route::resource('blogArticles', 'BlogArticleController');
+
+Route::resource('posts', 'PostController');
